@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  api:
+    mem_limit: 2g
+    cpus: 2
+    build: .
+    ports:
+      - "8894:80" #localhost port : container exposed port
+    working_dir: /app/
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: always
