@@ -1,8 +1,8 @@
 version: "3.8"
 services:
   api:
-    mem_limit: 4g
-    cpus: 4
+    mem_limit: 12g
+    cpus: 3
     build: .
     ports:
       - "8894:80" #localhost port : container exposed port
